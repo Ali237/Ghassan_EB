@@ -6,69 +6,149 @@
     <title>Ghassan Ebrabish - Embedded Engineering Student</title>
     <style>
       body {
+        margin: 0;
         font-family: Arial, sans-serif;
-        margin: 2rem;
-        line-height: 1.6;
+        background-color: #0076c0; /* blue background */
+        color: white;
+        display: flex;
+        height: 100vh;
       }
-      header {
-        text-align: center;
-        margin-bottom: 2rem;
+
+      /* Left sidebar */
+      .sidebar {
+        width: 220px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 1.5rem;
       }
-      nav a {
-        margin: 0 1rem;
-        text-decoration: none;
-        color: #0366d6;
+      .logo {
+        font-size: 1.8rem;
+        font-weight: bold;
       }
+      .tagline {
+        font-size: 0.9rem;
+        margin-top: 0.5rem;
+      }
+      .copyright {
+        font-size: 0.8rem;
+        margin-top: 1rem;
+      }
+
+      /* Right main content */
+      .content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 2rem;
+      }
+      .nav-item {
+        font-size: 2.5rem;
+        font-weight: bold;
+        margin: 1rem 0;
+        cursor: pointer;
+      }
+      .nav-item:hover {
+        color: black;
+      }
+
+      /* Hidden sections (shown when clicked) */
       section {
-        margin-bottom: 3rem;
+        display: none;
+        margin-top: 2rem;
+        color: white;
+        max-width: 600px;
+      }
+
+      /* Social icons bottom right */
+      .socials {
+        position: absolute;
+        bottom: 1rem;
+        right: 1rem;
+      }
+      .socials a {
+        margin-left: 1rem;
+        text-decoration: none;
+        color: white;
+        font-size: 1.2rem;
+      }
+      .socials a:hover {
+        color: black;
       }
     </style>
   </head>
   <body>
-    <header>
-      <h1>Ghassan Ebrabish</h1>
-      <p>Embedded Engineering Student | Firmware | Embedded Linux | RTOS</p>
-      <nav>
-        <a href="https://github.com/your-username" target="_blank">GitHub</a>
-        <a href="https://gitlab.com/your-username" target="_blank">GitLab</a>
-        <a href="https://linkedin.com/in/ghassan-ebrabish" target="_blank"
-          >LinkedIn</a
-        >
-      </nav>
-    </header>
+    <!-- Left sidebar -->
+    <div class="sidebar">
+      <div>
+        <div class="logo">Ghassan Ebrabish</div>
+        <div class="tagline">Embedded Engineering Student</div>
+      </div>
+      <div class="copyright">© 2025 Ghassan Ebrabish</div>
+    </div>
 
-    <section>
-      <h2>About Me</h2>
-      <p>
-        Short intro about your studies, skills, and interests in embedded
-        systems.
-      </p>
-    </section>
+    <!-- Right navigation & content -->
+    <div class="content">
+      <div class="nav-item" onclick="showSection('about')">ABOUT</div>
+      <div class="nav-item" onclick="showSection('projects')">PROJECTS</div>
+      <div class="nav-item" onclick="showSection('blog')">BLOG</div>
+      <div class="nav-item" onclick="showSection('contact')">CONTACT</div>
 
-    <section>
-      <h2>Projects</h2>
-      <ul>
-        <li>
-          <a href="https://github.com/your-username/project1">Project 1</a> -
-          description
-        </li>
-        <li>
-          <a href="https://github.com/your-username/project2">Project 2</a> -
-          description
-        </li>
-      </ul>
-    </section>
+      <!-- Sections -->
+      <section id="about">
+        <h2>About Me</h2>
+        <p>
+          Short intro about your studies, skills, and interests in embedded
+          systems.
+        </p>
+      </section>
 
-    <section>
-      <h2>Blog</h2>
-      <p>Coming soon...</p>
-    </section>
+      <section id="projects">
+        <h2>Projects</h2>
+        <ul>
+          <li>
+            <a href="https://github.com/your-username/project1" target="_blank"
+              >Project 1</a
+            >
+            - description
+          </li>
+          <li>
+            <a href="https://github.com/your-username/project2" target="_blank"
+              >Project 2</a
+            >
+            - description
+          </li>
+        </ul>
+      </section>
 
-    <section>
-      <h2>Contact</h2>
-      <p>Email: ebrabish@ualberta.ca</p>
-    </section>
+      <section id="blog">
+        <h2>Blog</h2>
+        <p>Coming soon...</p>
+      </section>
+
+      <section id="contact">
+        <h2>Contact</h2>
+        <p>Email: ebrabish@ualberta.ca</p>
+      </section>
+    </div>
+
+    <!-- Socials -->
+    <div class="socials">
+      <a href="https://github.com/your-username" target="_blank">GitHub</a>
+      <a href="https://gitlab.com/your-username" target="_blank">GitLab</a>
+      <a href="https://linkedin.com/in/ghassan-ebrabish" target="_blank"
+        >LinkedIn</a
+      >
+    </div>
+
+    <script>
+      function showSection(id) {
+        document
+          .querySelectorAll("section")
+          .forEach((sec) => (sec.style.display = "none"));
+        document.getElementById(id).style.display = "block";
+      }
+    </script>
   </body>
 </html>
-
-
