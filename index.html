@@ -4,79 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ghassan Ebrabish - Embedded Engineering Student</title>
-    <style>
-      body {
-        margin: 0;
-        font-family: Arial, sans-serif;
-        background-color: #0076c0; /* blue background */
-        color: white;
-        display: flex;
-        height: 100vh;
-      }
-
-      /* Left sidebar */
-      .sidebar {
-        width: 220px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        padding: 1.5rem;
-      }
-      .logo {
-        font-size: 1.8rem;
-        font-weight: bold;
-      }
-      .tagline {
-        font-size: 0.9rem;
-        margin-top: 0.5rem;
-      }
-      .copyright {
-        font-size: 0.8rem;
-        margin-top: 1rem;
-      }
-
-      /* Right main content */
-      .content {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        padding: 2rem;
-      }
-      .nav-item {
-        font-size: 2.5rem;
-        font-weight: bold;
-        margin: 1rem 0;
-        cursor: pointer;
-      }
-      .nav-item:hover {
-        color: black;
-      }
-
-      /* Hidden sections (shown when clicked) */
-      section {
-        display: none;
-        margin-top: 2rem;
-        color: white;
-        max-width: 600px;
-      }
-
-      /* Social icons bottom right */
-      .socials {
-        position: absolute;
-        bottom: 1rem;
-        right: 1rem;
-      }
-      .socials a {
-        margin-left: 1rem;
-        text-decoration: none;
-        color: white;
-        font-size: 1.2rem;
-      }
-      .socials a:hover {
-        color: black;
-      }
-    </style>
+    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="styles/blog.css" />
   </head>
   <body>
     <!-- Left sidebar -->
@@ -84,6 +13,11 @@
       <div>
         <div class="logo">Ghassan Ebrabish</div>
         <div class="tagline">Embedded Engineering Student</div>
+        <img
+          src="images/photo.jpg"
+          alt="Ghassan Ebrabish"
+          class="profile-pic"
+        />
       </div>
       <div class="copyright">© 2025 Ghassan Ebrabish</div>
     </div>
@@ -91,46 +25,13 @@
     <!-- Right navigation & content -->
     <div class="content">
       <div class="nav-item" onclick="showSection('about')">ABOUT</div>
+      <div class="nav-item" onclick="showSection('resume')">RESUME</div>
       <div class="nav-item" onclick="showSection('projects')">PROJECTS</div>
       <div class="nav-item" onclick="showSection('blog')">BLOG</div>
       <div class="nav-item" onclick="showSection('contact')">CONTACT</div>
 
-      <!-- Sections -->
-      <section id="about">
-        <h2>About Me</h2>
-        <p>
-          Short intro about your studies, skills, and interests in embedded
-          systems.
-        </p>
-      </section>
-
-      <section id="projects">
-        <h2>Projects</h2>
-        <ul>
-          <li>
-            <a href="https://github.com/your-username/project1" target="_blank"
-              >Project 1</a
-            >
-            - description
-          </li>
-          <li>
-            <a href="https://github.com/your-username/project2" target="_blank"
-              >Project 2</a
-            >
-            - description
-          </li>
-        </ul>
-      </section>
-
-      <section id="blog">
-        <h2>Blog</h2>
-        <p>Coming soon...</p>
-      </section>
-
-      <section id="contact">
-        <h2>Contact</h2>
-        <p>Email: ebrabish@ualberta.ca</p>
-      </section>
+      <!-- Sections will be loaded here -->
+      <div id="section-container"></div>
     </div>
 
     <!-- Socials -->
@@ -142,13 +43,6 @@
       >
     </div>
 
-    <script>
-      function showSection(id) {
-        document
-          .querySelectorAll("section")
-          .forEach((sec) => (sec.style.display = "none"));
-        document.getElementById(id).style.display = "block";
-      }
-    </script>
+    <script src="scripts/main.js"></script>
   </body>
 </html>
